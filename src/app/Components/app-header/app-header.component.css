@@ -1,0 +1,15 @@
+#divHeader{
+    margin: 0.5em auto;
+    width: 100%;
+    overflow: hidden;
+}
+    #divHeader img{
+        margin: 0.5em 1em;
+        height: 3em;
+        float: left;
+        vertical-align: middle;
+    }
+    #divHeader h2{
+        margin: 0.5em 2em;
+        float: left;
+    }

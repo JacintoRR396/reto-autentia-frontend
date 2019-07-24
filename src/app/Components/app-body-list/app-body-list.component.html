@@ -1,0 +1,50 @@
+<form id="formCatalogue" ng-submit="submitCountry()">
+    <table class="table">
+        <caption>{{ titleCaption }}</caption>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Profesor</th>
+                <th>Nivel</th>
+                <th>Horas</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let course of courses">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div id="divActions">
+                        <a ng-click="editCourse(course)">Editar</a>
+                        <span> | </span>
+                        <a ng-click="deleteCourse(course)" class="button red-button">Elimnar</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </tr>
+        </tfoot>
+    </table>
+</form>
