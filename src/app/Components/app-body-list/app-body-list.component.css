@@ -28,6 +28,7 @@ table {
     width: 50%;
 }
     caption {
+        caption-side: top;
         text-align: left;
         color: silver;
         font-weight: bold;

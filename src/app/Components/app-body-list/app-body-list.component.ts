@@ -10,11 +10,11 @@ import { CoursesService } from '../../services/courses.service';
 })
 export class AppBodyListComponent implements OnInit {
 
-  titleCaption : string = "Catálogo de Cursos";
+  titleCaption : string;
   aCourses : any = [];
 
   constructor(private oCoursesService: CoursesService) {
-    
+    this.titleCaption = 'Catálogo de Cursos';
   }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class AppBodyListComponent implements OnInit {
     this.oCoursesService.getCourses().subscribe(
       res => this.aCourses = res,
       err => console.error(err)
-    )
+    );
 
   }
 

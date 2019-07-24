@@ -1,0 +1,8 @@
+#divBody{
+    overflow: hidden;
+}
+#divRouterOutlet{
+    float: left;
+    width: 70%;
+    overflow: hidden;
+}
