@@ -11,14 +11,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor=" let course of courses">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr *ngFor="let course of aCourses">
+                <td>{{course.sTitle}}</td>
+                <td>{{course.sTeacher}}</td>
+                <td>{{course.sLevel}}</td>
+                <td>{{course.iNumHours}}</td>
                 <td>
                     <div id="divActions">
-                        <a ng-click="editCourse(course)">Editar</a>
+                        <a ng-click="editCourse(course)" class="button blue-button">Editar</a>
                         <span> | </span>
                         <a ng-click="deleteCourse(course)" class="button red-button">Elimnar</a>
                     </div>

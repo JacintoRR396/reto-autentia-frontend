@@ -18,6 +18,10 @@ export class Course implements ICourse{
         this.bState = state;
     }
 
-    
+    public static fromArray(res : Object):Course{
+        let course : Course;
+        course = new Course(res["id"], res["titulo"], res["profesor"], res["nivel"], res["numero-horas"], res["activo"]);
+        return course;
+    }
 
 }

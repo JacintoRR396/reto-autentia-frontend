@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 
 import { Course } from '../models/Course';
 import { Observable } from 'rxjs';
@@ -9,9 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class CoursesService {
 
-  API_REST_URI = 'http://localhost:8080/reto-autentia-backend/rest';
+  API_REST_URI = '/reto-autentia-backend/rest';
+  oHeaders = new HttpHeaders();
 
-  constructor(private oHttp: HttpClient) { }
+  constructor(private oHttp: HttpClient) {
+    console.log('Service Courses is working!!!');
+  }
 
   getCourses(){
     return this.oHttp.get(this.API_REST_URI + '/courses');

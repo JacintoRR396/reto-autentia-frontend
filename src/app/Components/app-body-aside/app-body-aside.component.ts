@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AppBodyListComponent } from '../app-body-list/app-body-list.component';
 
 @Component({
   selector: 'app-body-aside',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppBodyAsideComponent implements OnInit {
 
+  @Input() oABLCopm : AppBodyListComponent;
+
   constructor() { }
 
   ngOnInit() {
+
+    /*if(this.oABLCopm.bReadyCourses){
+      alert("Hay Comunicación");
+    }*/
+
   }
 
 }

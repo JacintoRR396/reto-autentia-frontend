@@ -11,7 +11,8 @@ import { CoursesService } from '../../services/courses.service';
 export class AppBodyListComponent implements OnInit {
 
   titleCaption : string;
-  aCourses : any = [];
+  aCourses : Course[] = [];
+  bReadyCourses : boolean = false;
 
   constructor(private oCoursesService: CoursesService) {
     this.titleCaption = 'Catálogo de Cursos';
@@ -19,11 +20,21 @@ export class AppBodyListComponent implements OnInit {
 
   ngOnInit() {
 
+    this.getCourses();
+
+  }
+
+  public getCourses(){
     this.oCoursesService.getCourses().subscribe(
-      res => this.aCourses = res,
+      res => {
+        let aRes : Object[] = res as Object[];
+        aRes.forEach(element => {
+          this.aCourses.push(Course.fromArray(element));
+        });
+        this.bReadyCourses = true;
+      },
       err => console.error(err)
     );
-
   }
 
 }
