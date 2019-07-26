@@ -1,6 +1,6 @@
 <form id="formCatalogue" ng-submit="submitCountry()">
     <table class="table">
-        <caption>{{ titleCaption }}</caption>
+        <caption>{{ sTitleCaption }}</caption>
         <thead>
             <tr>
                 <th>Título</th>
@@ -18,33 +18,31 @@
                 <td>{{course.iNumHours}}</td>
                 <td>
                     <div id="divActions">
-                        <a ng-click="editCourse(course)" class="button blue-button">Editar</a>
+                        <button (click)="updateCourse(course)" class="btn-common btn-update cursor-pointer">Editar</button>
                         <span> | </span>
-                        <a ng-click="deleteCourse(course)" class="button red-button">Elimnar</a>
+                        <button (click)="deleteCourse(course)" class="btn-common btn-delete cursor-pointer">Elimnar</button>
                     </div>
                 </td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </tr>
-        </tfoot>
+        <tfoot></tfoot>
     </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <a id="linkAdd" href="/courses/add" class="btn-common btn-primary cursor-pointer">Nuevo Curso</a>
 </form>

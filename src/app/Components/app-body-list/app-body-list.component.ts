@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Course } from '../../models/Course';
 import { CoursesService } from '../../services/courses.service';
+import { CoursesStubService } from '../../services/coursesStub.service';
 
 @Component({
   selector: 'app-body-list',
@@ -10,12 +11,13 @@ import { CoursesService } from '../../services/courses.service';
 })
 export class AppBodyListComponent implements OnInit {
 
-  titleCaption : string;
+  sTitleCaption : string;
   aCourses : Course[] = [];
-  bReadyCourses : boolean = false;
+  bReadyCourses : boolean;
+  oCourseSelect : Course = new Course();
 
-  constructor(private oCoursesService: CoursesService) {
-    this.titleCaption = 'Catálogo de Cursos';
+  constructor(private oCoursesService: CoursesStubService) {
+    this.sTitleCaption = 'Catálogo de Cursos';
   }
 
   ngOnInit() {
@@ -24,17 +26,31 @@ export class AppBodyListComponent implements OnInit {
 
   }
 
-  public getCourses(){
-    this.oCoursesService.getCourses().subscribe(
-      res => {
-        let aRes : Object[] = res as Object[];
-        aRes.forEach(element => {
-          this.aCourses.push(Course.fromArray(element));
-        });
-        this.bReadyCourses = true;
-      },
-      err => console.error(err)
-    );
+  public getCourses() {
+    this.aCourses = this.oCoursesService.getCourses();
+    // this.oCoursesService.getCourses().subscribe(
+    //   (res) => {
+    //     const aRes : Object[] = res as Object[];
+    //     aRes.forEach((element) => {
+    //       this.aCourses.push(Course.fromArray(element));
+    //     });
+    //     this.bReadyCourses = true;
+    //   },
+    //   err => console.error(err)
+    // );
+  }
+
+  public addCourse(oCourse : Course) : void {
+    console.log(this.aCourses.find(course => course.lId === oCourse.lId));
+  }
+
+  public updateCourse(oCourse : Course) : void {
+    console.log(this.aCourses.find(course => course.lId === oCourse.lId));
+  }
+
+  public deleteCourse(oCourse : Course) : void {
+    console.log(this.aCourses.find(course => course.lId === oCourse.lId));
+    //this.aCourses = this.oCoursesService.deleteCourse(oCourse.lId);
   }
 
 }

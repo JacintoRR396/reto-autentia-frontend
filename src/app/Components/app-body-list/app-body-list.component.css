@@ -2,7 +2,7 @@
     margin-left: 5%;
 }
 
-.button{
+.btn-common{
     padding:3px 5px;
     font-family:'Helvetica Neue',sans-serif;
 	font-size:12px;
@@ -13,11 +13,11 @@
     background: #808080;
     color: #fff !important;
 }
-    .blue-button{
+    .btn-update{
         filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);
         border-color: rgb(11, 127, 180)
     }     
-    .red-button{
+    .btn-delete{
         border-color: rgb(196, 49, 49);
     } 
 
@@ -62,3 +62,12 @@ table {
     #divActions{
         text-align: center;
     }
+
+nav{
+    float: left;
+}
+#linkAdd{
+    float: left;
+    margin-left: 2em;
+    margin-top: 0.5em;
+}

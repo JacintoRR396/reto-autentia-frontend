@@ -1,1 +1,36 @@
-<p>app-body-form works!</p>
+<h3>{{ sTitleHeader }}</h3>
+<form>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="checkState">
+        <label class="form-check-label" for="checkState">Activo</label>
+    </div>
+    <div class="form-group">
+        <label for="slctTeacher">Profesor</label>
+        <select class="custom-select">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="inptTitle">Título</label>
+      <input type="input" class="form-control" id="inptTitle" aria-describedby="titleHelp">
+      <small id="titleHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="slctLevel">Nivel</label>
+        <select class="custom-select">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="inptFile">Adjuntar temario</label>
+        <input type="file" class="form-control-file" id="inptFile">
+    </div>
+    <button type="submit" class="btn btn-primary">Añadir</button>
+  </form>

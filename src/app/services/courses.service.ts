@@ -10,30 +10,31 @@ import { Observable } from 'rxjs';
 export class CoursesService {
 
   API_REST_URI = '/reto-autentia-backend/rest';
+  PATH = '/courses';
   oHeaders = new HttpHeaders();
 
   constructor(private oHttp: HttpClient) {
     console.log('Service Courses is working!!!');
   }
 
-  getCourses(){
-    return this.oHttp.get(this.API_REST_URI + '/courses');
+  getCourses() : Observable<any> {
+    return this.oHttp.get(this.API_REST_URI + this.PATH);
   }
 
-  getCourse(sId : string){
-    return this.oHttp.get(`${this.API_REST_URI}/courses/${sId}`);
+  getCourse(sId : string) : Observable<any> {
+    return this.oHttp.get(`${this.API_REST_URI}${this.PATH}/${sId}`);
   }
 
-  addCourse(oCourse: Course){
-    return this.oHttp.post(`${this.API_REST_URI}/courses`, oCourse);
+  addCourse(oCourse: Course) : Observable<any> {
+    return this.oHttp.post(`${this.API_REST_URI}${this.PATH}`, oCourse);
   }
 
-  updateCourse(sId : string, oCourse: Course){
-    return this.oHttp.put(`${this.API_REST_URI}/courses/${sId}`, oCourse);
+  updateCourse(sId : string, oCourse: Course) : Observable<any> {
+    return this.oHttp.put(`${this.API_REST_URI}${this.PATH}/${sId}`, oCourse);
   }
 
-  deleteCourse(sId : string){
-    return this.oHttp.delete(`${this.API_REST_URI}/courses/${sId}`);
+  deleteCourse(sId : string) : Observable<any> {
+    return this.oHttp.delete(`${this.API_REST_URI}${this.PATH}/${sId}`);
   }
 
 }

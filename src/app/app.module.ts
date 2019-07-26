@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { AppBodyAsideComponent } from './Components/app-body-aside/app-body-asid
 import { AppFooterComponent } from './Components/app-footer/app-footer.component';
 
 import { CoursesService } from './services/courses.service';
+import { CoursesStubService } from './services/coursesStub.service';
 
 @NgModule({
   declarations: [
@@ -30,15 +32,17 @@ import { CoursesService } from './services/courses.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    CoursesStubService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  
+
 
 
 }

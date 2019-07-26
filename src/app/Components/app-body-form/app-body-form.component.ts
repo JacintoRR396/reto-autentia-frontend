@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppBodyFormComponent implements OnInit {
 
+  sTitleHeader = 'Añadir Curso';
+
   constructor() { }
 
   ngOnInit() {
+
+    
+
   }
 
 }
