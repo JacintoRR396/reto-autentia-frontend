@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppBodyFormComponent } from './app-body-form.component';
+import { AppAsideComponent } from './app-aside.component';
 
-describe('AppBodyFormComponent', () => {
-  let component: AppBodyFormComponent;
-  let fixture: ComponentFixture<AppBodyFormComponent>;
+describe('AppAsideComponent', () => {
+  let component: AppAsideComponent;
+  let fixture: ComponentFixture<AppAsideComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppBodyFormComponent ]
+      declarations: [ AppAsideComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppBodyFormComponent);
+    fixture = TestBed.createComponent(AppAsideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

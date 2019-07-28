@@ -1,0 +1,59 @@
+h3, hr, form {
+    width: 60%;
+}
+h3 {
+    color: #919aa1;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.15em 2em;
+    margin: 0.25em auto;
+}
+hr{
+    background-color: #777;
+    width: 50%;
+}
+form {
+    margin: 0em auto;
+}
+div {
+    margin-left: 1em;
+    float: left;
+    width: 90%;
+    height: 2em;;
+}
+label {
+    background: #808080;
+    color: #fff !important;
+    font-weight: bold;
+    float: left;
+    padding: 0.2em 1em;
+    width: 12em;
+}
+select, input {
+    margin-left: 2em;
+    vertical-align: middle;
+}
+select, input[type='input'], input[type='file'], input[type='number'] {
+    float: left;
+    height: 2em;
+    padding: 0.25em;
+    width: 50%;
+}
+input[type='number'] {
+    width: 10%;
+}
+
+.btn-add {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    border-color: green;
+    padding: 0.2em 1.5em;
+    margin-left: 3em;
+}
+.btn-add:hover {
+    background: green;
+    border-color: #808080;
+    text-decoration: none;
+}

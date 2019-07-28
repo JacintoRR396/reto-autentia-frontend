@@ -1,0 +1,40 @@
+<h3 class="non-selectable">{{ sTitleHeader }}</h3>
+<hr>
+<form>
+    <div class="form-group">
+        <label class="non-selectable" for="checkState">Activo</label>
+        <input type="checkbox" id="checkState">
+    </div>
+    <div class="form-group">
+        <label for="slctTeacher" class="non-selectable">Profesor</label>
+        <select class="custom-select">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="inptTitle" class="non-selectable">Título</label>
+      <input type="input" class="form-control" id="inptTitle" aria-describedby="titleHelp">
+      <!-- <small id="titleHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+        <label for="slctLevel" class="non-selectable">Nivel</label>
+        <select class="custom-select">
+            <option selected>Elija una opción</option>
+            <option value="1">Básico</option>
+            <option value="2">Intermedio</option>
+            <option value="3">Bñasico</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="inptHours" class="non-selectable">Horas</label>
+        <input type="number" class="form-control" id="inptHours" min="5" max="120" step="5">
+    </div>
+    <div class="form-group">
+        <label for="inptFile" class="non-selectable">Adjuntar temario</label>
+        <input type="file" class="form-control-file" id="inptFile">
+    </div>
+    <button type="submit" class="btn-primary btn-add">Añadir</button>
+  </form>

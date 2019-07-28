@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppBodyListComponent } from './Components/app-body-list/app-body-list.component';
-import { AppBodyFormComponent } from './Components/app-body-form/app-body-form.component';
+import { AppSectionListComponent } from './Components/app-section-list/app-section-list.component';
+import { AppSectionFAddComponent } from './Components/app-section-fadd/app-section-fadd.component';
 
 const routes: Routes = [
   {
@@ -12,11 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'courses',
-    component: AppBodyListComponent
+    component: AppSectionListComponent
   },
   {
     path: 'courses/add',
-    component: AppBodyFormComponent
+    component: AppSectionFAddComponent
   }
 ];
 
@@ -25,7 +25,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-
-  
 
 }

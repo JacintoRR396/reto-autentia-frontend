@@ -7,11 +7,11 @@
                 <th>Profesor</th>
                 <th>Nivel</th>
                 <th>Horas</th>
-                <th>Acciones</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let course of aCourses">
+            <tr *ngFor="let course of aCourses | PagCourses:iPageSize:iPageCurrent">
                 <td>{{course.sTitle}}</td>
                 <td>{{course.sTeacher}}</td>
                 <td>{{course.sLevel}}</td>
@@ -34,15 +34,15 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#"><span>1</span></a></li>
+            <li class="page-item"><a class="page-link" href="#"><span>2</span></a></li>
+            <li class="page-item"><a class="page-link" href="#"><span>3</span></a></li>
             <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
+                <a class="page-link" href="#" aria-label="Next" (click)='iPageCurrent = iPageCurrent + 1'>
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
         </ul>
     </nav>
-    <a id="linkAdd" href="/courses/add" class="btn-common btn-primary cursor-pointer">Nuevo Curso</a>
+    <a id="linkAdd" href="/courses/add" class="btn-common btn-primary btn-add cursor-pointer">Nuevo Curso</a>
 </form>

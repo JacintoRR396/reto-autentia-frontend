@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppBodyDetailComponent } from './app-body-detail.component';
+import { AppSectionFAddComponent } from './app-section-fadd.component';
 
-describe('AppBodyDetailComponent', () => {
-  let component: AppBodyDetailComponent;
-  let fixture: ComponentFixture<AppBodyDetailComponent>;
+describe('AppSectionFAddComponent', () => {
+  let component: AppSectionFAddComponent;
+  let fixture: ComponentFixture<AppSectionFAddComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppBodyDetailComponent ]
+      declarations: [ AppSectionFAddComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppBodyDetailComponent);
+    fixture = TestBed.createComponent(AppSectionFAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
