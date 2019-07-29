@@ -1,6 +1,6 @@
 <h3 class="non-selectable">{{ sTitleHeader }}</h3>
 <hr>
-<form>
+<form #formAddCourse="ngForm" (ngSubmit)="onSubmitCourse(formAddCourse)" autocomplete="off">
     <div class="form-group">
         <label class="non-selectable" for="checkState">Activo</label>
         <input type="checkbox" id="checkState">

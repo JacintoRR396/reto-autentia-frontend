@@ -58,7 +58,7 @@ export class AppSectionListComponent implements OnInit {
       //   },
       //   err => console.error(err)
       // );
-    }else {
+    } else {
       this.aCourses = this.oCoursesService.getCourses();
     }
     this.iPageTotal = (this.aCourses.length % this.iPageSize) + 1;
@@ -70,6 +70,13 @@ export class AppSectionListComponent implements OnInit {
   }
 
   public updateCourse(oCourse : Course) : void {
+  //   alertify.confirm("This is a confirm dialog.",
+  // function(){
+  //   alertify.success('Ok');
+  // },
+  // function(){
+  //   alertify.error('Cancel');
+  // });
     console.log(this.aCourses.find(course => course.lId === oCourse.lId));
   }
 
