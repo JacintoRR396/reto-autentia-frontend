@@ -88,7 +88,7 @@ export class CoursesStubService implements IService {
   }
 
   getCourses(): Course[] {
-    return Catalogue.sortByTitle(this.aCourses);
+    return Catalogue.sort(this.aCourses, 'sTitle');
   }
 
   getCourse(lId: number): Course {
@@ -119,4 +119,15 @@ export class CoursesStubService implements IService {
     // TODO alert()
     return this.aCourses;
   }
+
+  getTeachers() : string[] {
+    const aTeachers : string[] = [];
+    this.aCourses.forEach((oCourse) => {
+      if (!aTeachers.includes(oCourse.sTeacher)) {
+        aTeachers.push(oCourse.sTeacher);
+      }
+    });
+    return aTeachers;
+  }
+
 }

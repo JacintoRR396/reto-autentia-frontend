@@ -3,15 +3,31 @@
         <caption>{{ sTitleCaption }}</caption>
         <thead>
             <tr>
-                <th>Título</th>
-                <th>Profesor</th>
-                <th>Nivel</th>
-                <th>Horas</th>
+                <th>
+                    <button (click)="sort('sTitle')" class="btn-title cursor-pointer">
+                        <span>Título</span>
+                    </button>
+                </th>
+                <th>
+                    <button (click)="sort('sTeacher')" class="btn-title cursor-pointer">
+                        <span>Profesor</span>
+                    </button>
+                </th>
+                <th>
+                    <button (click)="sort('sLevel')" class="btn-title cursor-pointer">
+                        <span>Nivel</span>
+                    </button>
+                </th>
+                <th>
+                    <button (click)="sort('iNumHours')" class="btn-title cursor-pointer">
+                        <span>Horas</span>
+                    </button>
+                </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let course of aCourses | PagCourses:iPageSize:iPageCurrent">
+            <tr *ngFor="let course of aCourses | PagCoursesTitle:sSearchTitle" ><!-- | PagCourses:iPageSize:iPageCurrent-->
                 <td>{{course.sTitle}}</td>
                 <td>{{course.sTeacher}}</td>
                 <td>{{course.sLevel}}</td>
@@ -30,19 +46,29 @@
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
+                <!-- <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
-                </a>
+                </a> -->
+                <button (click)="updatePage(iPageCurrent - 1)" class="btn-common cursor-pointer">
+                    <span aria-hidden="true">&laquo;</span>
+                </button>
             </li>
             <li class="page-item"><a class="page-link" href="#"><span>1</span></a></li>
             <li class="page-item"><a class="page-link" href="#"><span>2</span></a></li>
             <li class="page-item"><a class="page-link" href="#"><span>3</span></a></li>
             <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next" (click)='iPageCurrent = iPageCurrent + 1'>
+                <!-- <a class="page-link" href="#" aria-label="Next" (click)='iPageCurrent = iPageCurrent + 1'>
                     <span aria-hidden="true">&raquo;</span>
-                </a>
+                </a> -->
+                <button (click)="updatePage(iPageCurrent + 1)" class="btn-common cursor-pointer">
+                    <span aria-hidden="true">&raquo;</span>
+                </button>
             </li>
         </ul>
     </nav>
     <a id="linkAdd" href="/courses/add" class="btn-common btn-primary btn-add cursor-pointer">Nuevo Curso</a>
+    <div class="form-group">
+        <input type="text" class="form-control" id="inptSearch" placeholder="Buscar por Título"
+            [(ngModel)]="sSearchTitle" [ngModelOptions]="{standalone: true}">
+    </div>
 </form>

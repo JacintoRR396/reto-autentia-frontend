@@ -16,6 +16,7 @@ import { CoursesService } from './services/courses.service';
 import { CoursesStubService } from './services/coursesStub.service';
 
 import { PagCoursesPipe } from './pipes/pag-courses.pipe';
+import { PagCoursesTitlePipe } from './pipes/pag-courses-title.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PagCoursesPipe } from './pipes/pag-courses.pipe';
     AppSectionDetailComponent,
     AppAsideComponent,
     AppFooterComponent,
-    PagCoursesPipe
+    PagCoursesPipe,
+    PagCoursesTitlePipe
   ],
   imports: [
     BrowserModule,
