@@ -9,7 +9,7 @@ export class Course implements ICourse{
   iNumHours: number;
   bState: boolean;
 
-  constructor(id? : number, title? : string, teacher? : string, level? : string, numHours? : number, state? : boolean){
+  constructor(id? : number, title? : string, teacher? : string, level? : string, numHours? : number, state? : boolean) {
     this.lId = id;
     this.sTitle = title;
     this.sTeacher = teacher;
@@ -18,10 +18,8 @@ export class Course implements ICourse{
     this.bState = state;
   }
 
-  public static fromArray(res : Object):Course{
-    let course : Course;
-    course = new Course(res['id'], res['titulo'], res['profesor'], res['nivel'], res['numero-horas'], res['activo']);
-    return course;
+  public static fromArray(res : Object):Course {
+    return new Course(res['id'], res['titulo'], res['profesor'], res['nivel'], res['numero-horas'], res['activo']);
   }
 
 }

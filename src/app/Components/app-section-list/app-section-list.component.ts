@@ -70,13 +70,7 @@ export class AppSectionListComponent implements OnInit {
   }
 
   public updateCourse(oCourse : Course) : void {
-  //   alertify.confirm("This is a confirm dialog.",
-  // function(){
-  //   alertify.success('Ok');
-  // },
-  // function(){
-  //   alertify.error('Cancel');
-  // });
+    // TODO
     console.log(this.aCourses.find(course => course.lId === oCourse.lId));
   }
 

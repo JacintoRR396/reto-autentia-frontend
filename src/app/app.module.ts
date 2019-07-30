@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,13 +13,20 @@ import { AppSectionDetailComponent } from './Components/app-section-detail/app-s
 import { AppAsideComponent } from './Components/app-aside/app-aside.component';
 import { AppFooterComponent } from './Components/app-footer/app-footer.component';
 
-import { CoursesService } from './services/courses.service';
-import { CoursesStubService } from './services/coursesStub.service';
-
 import { PagCoursesPipe } from './pipes/pag-courses.pipe';
 import { PagCoursesTitlePipe } from './pipes/pag-courses-title.pipe';
 
+import { CoursesService } from './services/courses.service';
+import { CoursesStubService } from './services/coursesStub.service';
+
 @NgModule({
+  imports: [
+    BrowserModule,
+    NgbModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
   declarations: [
     AppComponent,
     AppNavigationComponent,
@@ -29,12 +37,6 @@ import { PagCoursesTitlePipe } from './pipes/pag-courses-title.pipe';
     AppFooterComponent,
     PagCoursesPipe,
     PagCoursesTitlePipe
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
   ],
   providers: [
     CoursesService,

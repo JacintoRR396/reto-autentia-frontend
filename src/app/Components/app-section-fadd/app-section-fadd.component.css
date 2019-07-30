@@ -1,5 +1,5 @@
-h3, hr, form {
-    width: 60%;
+hr, form {
+    width: 80%;
 }
 h3 {
     color: #919aa1;
@@ -9,19 +9,22 @@ h3 {
     text-transform: uppercase;
     padding: 0.15em 2em;
     margin: 0.25em auto;
+    width: 60%;
 }
 hr{
     background-color: #777;
-    width: 50%;
+    width: 60%;
 }
 form {
     margin: 0em auto;
+
 }
 div {
     margin-left: 1em;
     float: left;
     width: 90%;
-    height: 2em;;
+    height: 2em;
+    padding-bottom: 2.5em;
 }
 label {
     background: #808080;
@@ -29,6 +32,7 @@ label {
     font-weight: bold;
     float: left;
     padding: 0.2em 1em;
+    margin-left: 5em;
     width: 12em;
 }
 select, input {
@@ -39,18 +43,29 @@ select, input[type='input'], input[type='file'], input[type='number'] {
     float: left;
     height: 2em;
     padding: 0.25em;
-    width: 50%;
+    width: 30em;
+    min-width: 25em;
 }
 input[type='number'] {
     width: 10%;
 }
+.divAlert{
+    height: 1.5em !important;
+    width: 20em;
+    float: right;
+    padding: 0em;
+}
+    .divAlert small{
+        vertical-align: middle;
+        margin-left: 0.5em;
+    }
 
 .btn-add {
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: bold;
     border-color: green;
     padding: 0.2em 1.5em;
-    margin-left: 3em;
+    margin-left: 9em;
 }
 .btn-add:hover {
     background: green;

@@ -1,36 +1,45 @@
 <h3 class="non-selectable">{{ sTitleHeader }}</h3>
 <hr>
-<form #formAddCourse="ngForm" (ngSubmit)="onSubmitCourse(formAddCourse)" autocomplete="off">
+<form #formAdd="ngForm" (ngSubmit)="onSubmitAdd(formAdd)" autocomplete="off">
+    <!-- STATE -->
     <div class="form-group">
         <label class="non-selectable" for="checkState">Activo</label>
-        <input type="checkbox" id="checkState">
+        <input id="checkState" type="checkbox" name="checkState" [(ngModel)]="oCourseAdd.bState">
     </div>
+    <!-- TEACHER -->
     <div class="form-group">
         <label for="slctTeacher" class="non-selectable">Profesor</label>
-        <select id="slctTeacher" class="custom-select" (change)="parseValueSlctTeacher($event.target.value)">
+        <select id="slctTeacher" name="slctTeacher" class="custom-select" (change)="parseValueSlctTeacher($event.target.value)" required>
             <option selected>Elija una opción</option>
             <option *ngFor="let sTeacher of aOptsTeacher" [value]="sTeacher">{{sTeacher}}</option>
         </select>
     </div>
+    <!-- TITLE -->
     <div class="form-group">
-      <label for="inptTitle" class="non-selectable">Título</label>
-      <input type="input" class="form-control" id="inptTitle" aria-describedby="titleHelp">
-      <!-- <small id="titleHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        <label for="inptTitle" class="non-selectable">Título</label>
+        <input id="inptTitle" type="input" class="form-control" #inptTitle="ngModel" name="inptTitle" [(ngModel)]="oCourseAdd.sTitle" placeholder="Título del Curso" minlength=4 required>
+        <div id="divAlertTitle" class="alert alert-danger divAlert" role="alert" *ngIf="inptTitle.touched && !inptTitle.valid">
+            <small id="smallAlertTitle1" *ngIf="inptTitle.errors.required">Debe proporcionar el Título del Curso.</small>
+            <small id="smallAlertTitle2" *ngIf="inptTitle.errors.minlength">El formato el Título NO es válido.</small>
+        </div>
     </div>
+    <!-- LEVEL -->
     <div class="form-group">
         <label for="slctLevel" class="non-selectable">Nivel</label>
-        <select id="slctLevel" class="custom-select" (change)="parseValueSlctLevel($event.target.value)">
-                <option selected>Elija una opción</option>
-                <option *ngFor="let sLevel of aOptsLevel" [value]="sLevel">{{sLevel}}</option>
-            </select>
+        <select id="slctLevel" name="slctLevel" class="custom-select" (change)="parseValueSlctLevel($event.target.value)" required>
+            <option selected>Elija una opción</option>
+            <option *ngFor="let sLevel of aOptsLevel" [value]="sLevel">{{sLevel}}</option>
+        </select>
     </div>
+    <!-- HOURS -->
     <div class="form-group">
         <label for="inptHours" class="non-selectable">Horas</label>
-        <input type="number" class="form-control" id="inptHours" min="5" max="120" step="5" value="5">
+        <input id="inptHours" type="number" class="form-control" name="inptHours" [(ngModel)]="oCourseAdd.iNumHours"  min="5" max="120" step="5" value="5" required>
     </div>
+    <!-- FILE -->
     <div class="form-group">
         <label for="inptFile" class="non-selectable">Adjuntar temario</label>
-        <input type="file" class="form-control-file" id="inptFile">
+        <input id="inptFile" type="file" class="form-control-file" name="inptFile">
     </div>
     <button type="submit" class="btn-primary btn-add">Añadir</button>
   </form>
