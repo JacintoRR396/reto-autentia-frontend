@@ -11,9 +11,7 @@ export class AppAsideComponent implements OnInit {
 
   ngOnInit() {
 
-    /*if(this.oABLCopm.bReadyCourses){
-      alert("Hay Comunicación");
-    }*/
+
 
   }
 

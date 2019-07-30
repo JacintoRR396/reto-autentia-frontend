@@ -22,10 +22,10 @@ import { CoursesStubService } from './services/coursesStub.service';
 @NgModule({
   imports: [
     BrowserModule,
-    NgbModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   declarations: [
     AppComponent,

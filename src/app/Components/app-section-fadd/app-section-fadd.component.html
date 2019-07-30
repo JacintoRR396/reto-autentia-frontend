@@ -3,21 +3,21 @@
 <form #formAdd="ngForm" (ngSubmit)="onSubmitAdd(formAdd)" autocomplete="off">
     <!-- STATE -->
     <div class="form-group">
-        <label class="non-selectable" for="checkState">Activo</label>
-        <input id="checkState" type="checkbox" name="checkState" [(ngModel)]="oCourseAdd.bState">
+        <label for="checkState" class="non-selectable" >Activo</label>
+        <input type="checkbox" id="checkState" name="checkState" [(ngModel)]="oCourseAdd.bState">
     </div>
     <!-- TEACHER -->
     <div class="form-group">
         <label for="slctTeacher" class="non-selectable">Profesor</label>
-        <select id="slctTeacher" name="slctTeacher" class="custom-select" (change)="parseValueSlctTeacher($event.target.value)" required>
-            <option selected>Elija una opción</option>
+        <select id="slctTeacher" class="custom-select" name="slctTeacher" [(ngModel)]="oCourseAdd.sTeacher" (change)="parseValueSlctTeacher($event.target.value)" required>
+            <option selected>Elija un Profesor ...</option>
             <option *ngFor="let sTeacher of aOptsTeacher" [value]="sTeacher">{{sTeacher}}</option>
         </select>
     </div>
     <!-- TITLE -->
     <div class="form-group">
         <label for="inptTitle" class="non-selectable">Título</label>
-        <input id="inptTitle" type="input" class="form-control" #inptTitle="ngModel" name="inptTitle" [(ngModel)]="oCourseAdd.sTitle" placeholder="Título del Curso" minlength=4 required>
+        <input type="input" id="inptTitle" class="form-control" name="inptTitle" #inptTitle="ngModel" [(ngModel)]="oCourseAdd.sTitle" placeholder="Título del Curso" minlength=4 required>
         <div id="divAlertTitle" class="alert alert-danger divAlert" role="alert" *ngIf="inptTitle.touched && !inptTitle.valid">
             <small id="smallAlertTitle1" *ngIf="inptTitle.errors.required">Debe proporcionar el Título del Curso.</small>
             <small id="smallAlertTitle2" *ngIf="inptTitle.errors.minlength">El formato el Título NO es válido.</small>
@@ -26,15 +26,15 @@
     <!-- LEVEL -->
     <div class="form-group">
         <label for="slctLevel" class="non-selectable">Nivel</label>
-        <select id="slctLevel" name="slctLevel" class="custom-select" (change)="parseValueSlctLevel($event.target.value)" required>
-            <option selected>Elija una opción</option>
+        <select id="slctLevel" class="custom-select" name="slctLevel" [(ngModel)]="oCourseAdd.sLevel" (change)="parseValueSlctLevel($event.target.value)" required>
+            <option selected>Elija un Nivel ...</option>
             <option *ngFor="let sLevel of aOptsLevel" [value]="sLevel">{{sLevel}}</option>
         </select>
     </div>
     <!-- HOURS -->
     <div class="form-group">
         <label for="inptHours" class="non-selectable">Horas</label>
-        <input id="inptHours" type="number" class="form-control" name="inptHours" [(ngModel)]="oCourseAdd.iNumHours"  min="5" max="120" step="5" value="5" required>
+        <input type="number" id="inptHours" class="form-control" name="inptHours" [(ngModel)]="oCourseAdd.iNumHours"  min="5" max="120" step="5" value="5" required>
     </div>
     <!-- FILE -->
     <div class="form-group">

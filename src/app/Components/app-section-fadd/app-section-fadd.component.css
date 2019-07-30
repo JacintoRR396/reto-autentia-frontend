@@ -24,7 +24,7 @@ div {
     float: left;
     width: 90%;
     height: 2em;
-    padding-bottom: 2.5em;
+    padding-bottom: 2.75em;
 }
 label {
     background: #808080;
@@ -54,6 +54,7 @@ input[type='number'] {
     width: 20em;
     float: right;
     padding: 0em;
+    margin-top: 0.2em;
 }
     .divAlert small{
         vertical-align: middle;

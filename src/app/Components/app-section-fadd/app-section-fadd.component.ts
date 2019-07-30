@@ -25,9 +25,8 @@ export class AppSectionFAddComponent implements OnInit {
 
   ngOnInit() {
 
-    this.oCourseAdd = new Course;
+    this.oCourseAdd = new Course(0, '', 'Elija un Profesor ...', 'Elija un Nivel ...', 10, false);
     this.oCourseAdd.lId = this.oCoursesService.getCourses().length;
-    this.oCourseAdd.iNumHours = 5;
     this.aOptsTeacher = this.oCoursesService.getTeachers();
     const aOptsLevel = Object.keys(ELevel);
     this.aOptsLevel = aOptsLevel.slice(aOptsLevel.length / 2);
@@ -37,10 +36,11 @@ export class AppSectionFAddComponent implements OnInit {
   onSubmitAdd(oFormAdd: NgForm) {
     console.log(oFormAdd);
     if (oFormAdd.valid) {
-      // TODO
+      // TODO añadir curso
+      // TODO resetear campos
       console.log(this.oCourseAdd);
     } else {
-      // TODO
+      // TODO gestionar errores
       console.log('Faltan campos por rellenar');
     }
   }

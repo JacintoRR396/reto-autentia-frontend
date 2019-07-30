@@ -14,7 +14,7 @@ export class AppSectionListComponent implements OnInit {
 
   sTitleCaption : string;
   aCourses : Course[] = [];
-  oCourseSelect : Course = new Course();
+  oCourseSelect : Course = new Course;
   iPageSize: number;
   iPageCurrent: number;
   iPageTotal: number;
@@ -25,13 +25,13 @@ export class AppSectionListComponent implements OnInit {
 
   constructor(private oCoursesService : /*CoursesService*/CoursesStubService) {
     this.sTitleCaption = 'Catálogo de Cursos';
-    this.iPageSize = 4;
-    this.iPageCurrent = 1;
-    this.bOrderAsc = false;
   }
 
   ngOnInit() {
 
+    this.iPageSize = 4;
+    this.iPageCurrent = 1;
+    this.bOrderAsc = false;
     this.getCourses();
 
   }
