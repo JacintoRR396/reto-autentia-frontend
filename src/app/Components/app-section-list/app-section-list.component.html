@@ -26,11 +26,14 @@
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td colspan="5" *ngIf="!aCourses.length">No existen Cursos todavía.</td>
+        </tr>
         <tr *ngFor="let course of aCourses | PagCoursesTitle:sSearchTitle" ><!-- | PagCourses:iPageSize:iPageCurrent-->
-            <td>{{course.sTitle}}</td>
-            <td>{{course.sTeacher}}</td>
-            <td>{{course.sLevel}}</td>
-            <td>{{course.iNumHours}}</td>
+            <td>{{ course.sTitle }}</td>
+            <td>{{ course.sTeacher }}</td>
+            <td>{{ course.sLevel }}</td>
+            <td>{{ course.iNumHours }}</td>
             <td>
                 <div id="divActions">
                     <button (click)="updateCourse(course)" class="btn-common btn-update cursor-pointer">Editar</button>

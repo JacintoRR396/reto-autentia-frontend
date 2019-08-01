@@ -12,7 +12,7 @@ export class CoursesService implements IService {
 
   API_REST_URI = '/reto-autentia-backend/rest';
   PATH = '/courses';
-  oHeaders = new HttpHeaders();
+  private oHeaders = new HttpHeaders();
 
   constructor(private oHttp: HttpClient) {
     console.log('Service Courses is working!!!');

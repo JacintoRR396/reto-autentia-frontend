@@ -12,6 +12,7 @@ import { AppSectionFAddComponent } from './Components/app-section-fadd/app-secti
 import { AppSectionDetailComponent } from './Components/app-section-detail/app-section-detail.component';
 import { AppAsideComponent } from './Components/app-aside/app-aside.component';
 import { AppFooterComponent } from './Components/app-footer/app-footer.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { PagCoursesPipe } from './pipes/pag-courses.pipe';
 import { PagCoursesTitlePipe } from './pipes/pag-courses-title.pipe';
@@ -35,6 +36,7 @@ import { CoursesStubService } from './services/coursesStub.service';
     AppSectionDetailComponent,
     AppAsideComponent,
     AppFooterComponent,
+    NotFoundComponent,
     PagCoursesPipe,
     PagCoursesTitlePipe
   ],

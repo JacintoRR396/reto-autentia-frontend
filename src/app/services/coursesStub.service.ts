@@ -8,7 +8,7 @@ import { IService } from './IService';
   providedIn: 'root'
 })
 export class CoursesStubService implements IService {
-  aCourses: Course[] = [
+  private aCourses: Course[] = [
     {
       lId: 1,
       sTitle: 'Introducción a JSF 2',
